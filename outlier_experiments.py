@@ -481,7 +481,8 @@ def _dagmm_experiment(x_train, y_train, dataset_name, single_class_ind, gpu_q, p
                                                    datetime.now().strftime('%Y-%m-%d-%H%M'))
     res_file_path = os.path.join(RESULTS_DIR, dataset_name, res_file_name)
     save_roc_pr_curve_data(scores, labels, res_file_path)
-
+    dagmm.keras_clear()
+    
     gpu_q.put(gpu_to_use)
 
 

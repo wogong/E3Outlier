@@ -97,3 +97,7 @@ def create_dagmm_model(encoder, decoder, estimation_encoder, lambd_diag=0.005):
     dagmm = Model(x_in, [x_rec, energy])
 
     return dagmm
+
+
+def keras_clear():
+    K.clear_session()
